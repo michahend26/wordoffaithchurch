@@ -201,3 +201,60 @@ button, a { -webkit-tap-highlight-color: transparent; }
  .hero-actions { display: grid; grid-template-columns: 1fr; width: min(100%,320px); margin: 24px auto 0; gap: 10px; }
  .hero-actions .button { justify-content: center; min-height: 48px; }
 }
+
+
+/* Exact approved homepage composition: compact emblem, fine navigation, centered gold wordmark and bright faith artwork */
+.site-header { background: rgba(255,255,255,.97); border-bottom: 1px solid #f0e7d3; }
+.header-inner { height: 76px; max-width: 1600px; padding: 0 4%; gap: 26px; }
+.brand-compact { min-width: 48px; width: 48px; height: 48px; flex: 0 0 48px; }
+.brand-compact .brand-seal { width: 48px; height: 48px; flex-basis: 48px; }
+.brand-seal { background: linear-gradient(115deg,#9c773b 0%,#f8e99c 48%,#b28a44 100%); padding: 3px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.7); }
+.brand-seal span { border: 1px solid rgba(255,255,255,.9); font-family: 'DM Sans',sans-serif; font-style: normal; font-weight: 600; font-size: 9px; letter-spacing: -.5px; color: #fff; }
+.desktop-nav { flex: 1; justify-content: flex-end; gap: clamp(13px,1.6vw,27px); }
+.desktop-nav a { color: #554a35; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .65px; }
+.desktop-nav a.active { color: #c39a42; }
+.desktop-nav a.active::after { bottom: -10px; height: 1px; }
+.header-actions { display:flex; align-items:center; gap: 20px; }
+.search-button { display:grid; place-items:center; width:22px; height:32px; border:0; padding:0; background:transparent; color:#a77e30; cursor:pointer; }
+.search-button svg { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.7; }
+.header-give { min-height: 34px; padding: 0 19px; border-radius: 4px; font-size: 9px; letter-spacing: .65px; white-space:nowrap; }
+.hero { position:relative; min-height: 570px; height: min(68vw, 690px); max-height: 710px; background:#fffdf7; overflow:hidden; display:flex; align-items:stretch; justify-content:center; }
+.hero::before { content:none; }
+.hero-shade { display:none; }
+.hero-art { position:absolute; inset:0; background-color:#fffdf7; background-image: url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=2200&q=90'); background-repeat:no-repeat; background-position:center 57%; background-size:cover; opacity:.95; }
+.hero-art::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.3) 16%,rgba(255,255,255,0) 45%,rgba(255,255,255,.05) 68%,rgba(255,255,255,.98) 100%); }
+.hero-content { z-index:2; width:100%; max-width:1200px; margin:0 auto; padding: 30px 22px 26px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; text-align:center; }
+.hero-brand-lockup { margin:0; width:100%; padding-top:10px; }
+.hero-brand-name { font-family:'Playfair Display',serif; font-size:clamp(44px,6.3vw,88px); font-weight:500; font-style:italic; line-height:1.04; letter-spacing:-3px; background:linear-gradient(100deg,#9d702c 5%,#d9b75b 47%,#b28332 83%); color:transparent; -webkit-background-clip:text; background-clip:text; text-shadow:none; }
+.hero-brand-tagline { margin-top:8px; font-family:'DM Sans',sans-serif; color:#b18432; font-size:clamp(10px,1.1vw,14px); letter-spacing:clamp(3px,.65vw,7px); font-weight:700; text-transform:uppercase; }
+.hero-actions { display:flex; justify-content:center; align-items:center; gap:13px; margin:0 0 0; }
+.hero-actions .button { min-height:37px; padding:0 16px; gap:9px; border-radius:4px; font-size:8px; letter-spacing:.45px; box-shadow:0 3px 10px rgba(118,88,32,.12); }
+.hero-actions .button-gold { background:linear-gradient(110deg,#b28a3d,#e0c56d); }
+.button-white { border:1px solid #e9ddc0; background:rgba(255,255,255,.95); color:#a47c30; }
+.button-symbol { font-size:12px; line-height:1; }
+.hero .play-icon { font-size:9px; }
+.welcome { padding-top:100px; }
+@media (min-width:1200px) { .hero-art { background-size:cover; } }
+@media (max-width:1050px) {
+ .header-inner { height:70px; padding:0 3%; gap:14px; }
+ .desktop-nav { gap:11px; }
+ .desktop-nav a { font-size:8px; letter-spacing:.25px; }
+ .header-actions { gap:12px; }
+ .brand-compact,.brand-compact .brand-seal { width:44px;height:44px;flex-basis:44px; }
+ .hero { min-height:520px; }
+}
+@media (max-width:760px) {
+ .header-inner { height:66px; padding:0 5%; }
+ .desktop-nav { display:none; }
+ .header-actions { margin-left:auto; }
+ .hero { min-height:570px; height:calc(88svh - 66px); max-height:690px; }
+ .hero-art { background-position:center 50%; background-size:auto 77%; background-color:#fffdf8; }
+ .hero-art::before { background:linear-gradient(180deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.15) 20%,rgba(255,255,255,0) 52%,rgba(255,255,255,.22) 66%,rgba(255,255,255,.98) 100%); }
+ .hero-content { padding:22px 16px 22px; }
+ .hero-brand-lockup { padding-top:0; }
+ .hero-brand-name { font-size:clamp(36px,9vw,56px); letter-spacing:-1.7px; }
+ .hero-brand-tagline { margin-top:8px; font-size:9px; letter-spacing:2.5px; }
+ .hero-actions { width:min(100%,310px); display:grid; grid-template-columns:1fr; gap:9px; }
+ .hero-actions .button { min-height:42px; font-size:9px; }
+ .welcome { padding-top:70px; }
+}
