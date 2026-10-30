@@ -25,6 +25,10 @@ function BrandMark({ compact = false }: { compact?: boolean }) {
   );
 }
 
+function SearchIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.4" /><path d="m15.5 15.5 4.2 4.2" /></svg>;
+}
+
 export default function Home() {
   return (
     <main>
@@ -41,21 +45,24 @@ export default function Home() {
             <a href="/give">Give</a>
             <a href="#connect">Connect</a>
           </nav>
-          <a className="button button-gold header-give" href="#connect">Plan a Visit</a>
+          <div className="header-actions">
+            <button className="search-button" aria-label="Search the website" type="button"><SearchIcon /></button>
+            <a className="button button-gold header-give" href="#connect">Plan a Visit</a>
+          </div>
         </div>
       </header>
 
       <section className="hero">
-        <div className="hero-shade" />
+        <div className="hero-art" role="img" aria-label="A glowing cross above hands holding the earth over an open Bible" />
         <div className="hero-content">
           <div className="hero-brand-lockup">
             <div className="hero-brand-name">Word Of Faith Church</div>
             <div className="hero-brand-tagline">People With a Purpose</div>
           </div>
           <div className="hero-actions">
-            <a className="button button-gold" href="#connect"><span aria-hidden="true">▦</span> Plan a Visit</a>
-            <a className="button button-white" href="/watch"><span className="play-icon">▶</span> Watch Sermons</a>
-            <a className="button button-gold" href="/give"><span aria-hidden="true">♥</span> Give Online</a>
+            <a className="button button-gold" href="#connect"><span className="button-symbol" aria-hidden="true">♧</span> Plan a Visit</a>
+            <a className="button button-white" href="/watch"><span className="button-symbol play-icon" aria-hidden="true">▶</span> Watch Sermons</a>
+            <a className="button button-gold" href="/give"><span className="button-symbol" aria-hidden="true">♥</span> Give Online</a>
           </div>
         </div>
       </section>
@@ -80,8 +87,7 @@ export default function Home() {
           <div className="pathway-grid">
             {quickLinks.map((item) => (
               <a className="pathway-card" href={item.href} key={item.number}>
-                <span className="card-number">{item.number}</span>
-                <span className="card-arrow" aria-hidden="true">↗</span>
+                <span className="card-number">{item.number}</span><span className="card-arrow" aria-hidden="true">↗</span>
                 <h3>{item.title}</h3><p>{item.text}</p><span className="card-link">{item.label}</span>
               </a>
             ))}
@@ -97,8 +103,7 @@ export default function Home() {
         <div className="ministry-grid">
           {ministries.map((item) => (
             <a className="ministry-card" href="/ministries" key={item.number}>
-              <span className="ministry-number">{item.number}</span>
-              <span className="ministry-arrow" aria-hidden="true">↗</span>
+              <span className="ministry-number">{item.number}</span><span className="ministry-arrow" aria-hidden="true">↗</span>
               <h3>{item.title}</h3><p>{item.text}</p>
             </a>
           ))}
