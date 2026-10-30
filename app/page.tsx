@@ -13,14 +13,14 @@ const quickLinks = [
   { number: "03", title: "Give with Purpose", text: "Support the church and its ministries through secure online giving.", href: "/give", label: "Giving options" }
 ];
 
-function BrandMark() {
+function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
-    <a className="brand" href="/" aria-label="Word of Faith Church home">
-      <span className="brand-seal"><span>Wofc</span></span>
-      <span className="brand-copy">
+    <a className={`brand ${compact ? "brand-compact" : ""}`} href="/" aria-label="Word of Faith Church home">
+      <span className="brand-seal" aria-hidden="true"><span>WOFC</span></span>
+      {!compact && <span className="brand-copy">
         <span className="brand-name">Word Of Faith Church</span>
         <span className="brand-tagline">People With a Purpose</span>
-      </span>
+      </span>}
     </a>
   );
 }
@@ -30,31 +30,34 @@ export default function Home() {
     <main>
       <header className="site-header">
         <div className="header-inner">
-          <BrandMark />
+          <BrandMark compact />
           <nav className="desktop-nav" aria-label="Main navigation">
+            <a className="active" href="/">Home</a>
             <a href="#about">About</a>
             <a href="#ministries">Ministries</a>
+            <a href="/school">School</a>
+            <a href="/daycare">Daycare</a>
             <a href="/watch">Watch</a>
-            <a href="/bible">Bible</a>
-            <a href="#education">Daycare & School</a>
+            <a href="/give">Give</a>
+            <a href="#connect">Connect</a>
           </nav>
-          <a className="button button-gold header-give" href="/give">Give</a>
+          <a className="button button-gold header-give" href="#connect">Plan a Visit</a>
         </div>
       </header>
 
       <section className="hero">
         <div className="hero-shade" />
         <div className="hero-content">
-          <p className="eyebrow"><span /> A place to belong. A purpose to live.</p>
-          <h1>Faith for today.<br /><em>Purpose for tomorrow.</em></h1>
-          <p className="hero-description">Welcome to Word of Faith Church—a community growing in faith, serving with love, and walking together in purpose.</p>
-          <div className="hero-actions">
-            <a className="button button-gold" href="#connect">Plan Your Visit <span aria-hidden="true">↗</span></a>
-            <a className="button button-glass" href="/watch"><span className="play-icon">▶</span> Watch Messages</a>
+          <div className="hero-brand-lockup">
+            <div className="hero-brand-name">Word Of Faith Church</div>
+            <div className="hero-brand-tagline">People With a Purpose</div>
           </div>
-          <div className="hero-note"><span className="note-line" /> PEOPLE WITH A PURPOSE</div>
+          <div className="hero-actions">
+            <a className="button button-gold" href="#connect"><span aria-hidden="true">▦</span> Plan a Visit</a>
+            <a className="button button-white" href="/watch"><span className="play-icon">▶</span> Watch Sermons</a>
+            <a className="button button-gold" href="/give"><span aria-hidden="true">♥</span> Give Online</a>
+          </div>
         </div>
-        <div className="hero-index"><span>01</span> / WELCOME</div>
       </section>
 
       <section className="welcome section-wrap" id="about">
