@@ -1,0 +1,11 @@
+{
+  "id": "/",
+  "name": "Word of Faith Church",
+  "short_name": "Word of Faith",
+  "description": "People With a Purpose",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b99a54",
+  "icons": []
+}
